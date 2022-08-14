@@ -1,0 +1,243 @@
+/* get fonts from google's api */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+* {
+  /* make default text colour grey */
+  color: darkgray;
+}
+
+/* generic page related css */
+body {
+  height: 200vh;
+  display: grid;
+  font-family: 'EB Garamond', serif;
+  background-image: url('../images/BG.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* template layout for all the main article pages  */
+#greatRunesContainer , #demigodsContainer, #godsContainer{
+  grid-template-areas: 'header header header'
+    'offCArticle offCArticle offCArticle'
+    'footer footer footer';
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 80px auto auto;
+  row-gap: 50px;
+}
+
+/* template layout for the index page, this layout is by default for browsers */
+#indexContainer {
+  grid-template-areas: 'header header header'
+    '. carousel .'
+    'vArticle vArticle vArticle'
+    'footer footer footer';
+  grid-template-columns: auto 640px auto;
+  grid-template-rows: 80px 360px auto auto;
+  row-gap: 50px;
+}
+
+.pageContainer {
+  display: grid;
+  background-color: rgba(31, 31, 34, 0.65);
+  border-radius: 15px;
+}
+
+/* layout the header bar as a single line with all items on the right except the Title */
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px;
+  max-height: 80px;
+  background-color: rgb(44, 44, 44);
+}
+
+/* layout the footer with items centralized but split across three lines */
+footer {
+  grid-area: footer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  padding-top: 10px;
+}
+
+/* make the ad more obvious with brighter colour */
+#footerAd h3{
+  color: rgb(252, 247, 0);
+}
+
+/* remove bullet points from the header/footer links list */
+header ul,
+footer ul {
+  list-style: none;
+}
+
+/* add colour and animation to the header/footer links */
+header li,
+footer li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+header a,
+footer a {
+  transition: all 0.2s ease 0s;
+  text-decoration: none;
+  color: darkgrey;
+}
+
+/* show highlight on mouse hover for links*/
+header li a:hover,
+footer a:hover {
+  color: rgb(252, 247, 0);
+}
+
+/* keep the title on the left side of the header */
+.title {
+  margin-right: auto;
+}
+
+/* let the user know the title is also a link back to the main page */
+.title :hover {
+  color: rgb(252, 247, 0);
+}
+
+/* CSS for making the revolving carousel on the Index page */
+.carousel {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  grid-area: carousel;
+  position: relative;
+  overflow: hidden; /* <=== this hides the other images in the carousel */
+  border-radius: 15px;
+}
+
+/* general CSS for the individual containers of images in the carousel */
+.slide {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+/* css for the images inside the slides */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* css for the navigation buttons on the carousel */
+/*  buttons are 40px radius circles  */
+.btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 5px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+/* small animation on click to let the user know */
+.btn:active {
+  transform: scale(1.1);
+}
+
+/* alignment of the two buttons within the carousel */
+.btn-back {
+  top: 45%;
+  left: 2%;
+  /* center the arrow symbol in the button */
+  padding-left: 4px;
+  padding-top: 8px;
+}
+
+.btn-fwd {
+  /* center the arrow symbol in the button */
+  padding-right: 4px;
+  padding-top: 8px;
+  /* position the button in the center of the carousel display*/
+  top: 45%;
+  right: 2%;
+}
+
+
+/* Styling for the verticle articles on the index page*/
+.verticalArticleContainer {
+  grid-area: vArticle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+}
+
+/* keep all the articles on one line and constrain them */
+.articleImageTop {
+  display: inline-block;
+  max-width: 300px;
+  padding: 10px 20px;
+}
+
+/* styling for verticle container on most info pages, will contain left and right leaning articles vertically */
+.offCenterArticleContainer {
+  grid-area: offCArticle;
+  column-count: 1;
+  padding: 50px;
+}
+
+.articleImageTop .imageContainer {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+/* Put all info for article on one line */
+.articleImageLeft, .articleImageRight {
+  margin-top: 10px;
+  max-height: 230px;
+  padding: 25px;
+  display: inline-block;
+}
+
+/* allow the image to shown on the left side with text in line to the right */
+.articleImageLeft .imageContainer {
+  float: left;
+}
+
+/* make sure the text doesn't overlap the picture */
+.articleImageLeft .description {
+  padding-left: 250px;
+}
+
+/* allow the image to shown on the right side with text in line to the left */
+.articleImageRight .imageContainer {
+  float: right;
+}
+
+/* make sure the text doesn't overlap the picture */
+.articleImageRight .description {
+  padding-Right: 250px;
+}
+
+
+/* non-page specific effects for articles */
+.article {
+  /* make sure the articles are visible on the dark background */
+  background-color: rgb(44, 44, 44);
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.article:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
