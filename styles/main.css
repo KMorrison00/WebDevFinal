@@ -37,6 +37,17 @@ body {
   row-gap: 50px;
 }
 
+/* template Layout for the catalog page */
+#catalogContainer {
+  grid-template-areas: 'header header header'
+    '. filter .'
+    'catalog catalog catalog'
+    'footer footer footer';
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 80px auto auto auto;
+  row-gap: 50px;
+}
+
 .pageContainer {
   display: grid;
   background-color: rgba(31, 31, 34, 0.65);
@@ -61,12 +72,20 @@ footer {
   margin-left: auto;
   margin-right: auto;
   padding: 50px;
-  padding-top: 10px;
+}
+
+#footerAd {
+  padding: 30px;
 }
 
 /* make the ad more obvious with brighter colour */
-#footerAd h3{
+#footerAd a h2{
+  text-align: center;
   color: rgb(252, 247, 0);
+}
+
+footer .address {
+  text-align: center;
 }
 
 /* remove bullet points from the header/footer links list */
@@ -240,4 +259,12 @@ footer a:hover {
 /* On mouse-over, add a deeper shadow */
 .article:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.catalogDisplay {
+  grid-area: catalog;
+}
+
+.filterSelector {
+  grid-area: filter;
 }
