@@ -205,6 +205,10 @@ footer a:hover {
   max-width: 300px;
   padding: 10px 20px;
 }
+/* change curser to let user know its clickable unlike other articles */
+.articleImageTop img:hover{
+  cursor: pointer;
+}
 
 /* styling for verticle container on most info pages, will contain left and right leaning articles vertically */
 .offCenterArticleContainer {
@@ -258,7 +262,7 @@ footer a:hover {
 
 /* On mouse-over, add a deeper shadow */
 .article:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.4);
 }
 
 .catalogDisplay {
@@ -267,4 +271,10 @@ footer a:hover {
 
 .filterSelector {
   grid-area: filter;
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  margin: 20px;
 }
