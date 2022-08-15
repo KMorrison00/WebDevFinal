@@ -269,12 +269,18 @@ footer a:hover {
   grid-area: catalog;
 }
 
+/* display all the filters in one line */
 .filterSelector {
   grid-area: filter;
   display: flex;
   justify-content: center;
 }
 
+/* space out the filters nicely so the click space isnt crowded */
 .filter {
+  margin: 20px;
+}
+/* not technically a filter but still in the same line so it needs the same spacing */
+#showAllContainer {
   margin: 20px;
 }

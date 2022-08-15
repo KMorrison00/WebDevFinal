@@ -29,72 +29,95 @@
             </header>
             <!-- Checkbox Filter for displaying catalogue images -->
             <div class="filterSelector">
-                <div class="filter">
-                    <input type="checkbox" id="showAll" > Show All
+                <!-- include labels to make the check boxes easier to click -->
+                <!-- by default we show all images, so start checked -->
+                <div id="showAllContainer">
+                    <input type="checkbox" id="showAll" checked>
+                    <label for="showAll"> Show All </label>
                 </div>
                 <div class="filter">
-                    <input type="checkbox" id="godFilter"> Gods
+                    <input type="checkbox" id="godFilter">
+                    <label for="godFilter"> Gods </label>
                 </div>
                 <div class="filter">
-                    <input type="checkbox" id="demigodFilter"> Demigods
+                    <input type="checkbox" id="demigodFilter">
+                    <label for="demigodFilter"> Demigods</label>
                 </div>
                 <div class="filter">
-                    <input type="checkbox" id="greatRunesFilter"> Great Runes
+                    <input type="checkbox" id="greatRuneFilter">
+                    <label for="greatRuneFilter"> Great Runes </label>
                 </div>
             </div>
             <!-- Container for all displayed images -->
             <!-- split into multiple classes for filtering -->
             <div class="catalogDisplay">
                 <div class="catalogItem demigodImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Malenia, Blade of Miquella">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Malenia, Blade of Miquella">
                 </div>
                 <div class="catalogItem demigodImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Godrick the Grafted">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Godrick the Grafted">
                 </div>
                 <div class="catalogItem demigodImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Mohg, Lord of Blood">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Mohg, Lord of Blood">
                 </div>
                 <div class="catalogItem demigodImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Morgott, the Omen King">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Morgott, the Omen King">
                 </div>
                 <div class="catalogItem demigodImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Starscourge Radahn">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Starscourge Radahn">
                 </div>
                 <div class="catalogItem demigodImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Praetor Rykard">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Praetor Rykard">
                 </div>
                 <div class="catalogItem godImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Queen Marika">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Queen Marika">
                 </div>
                 <div class="catalogItem godImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Radagon Of the Golden Order">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Radagon Of the Golden Order">
                 </div>
                 <div class="catalogItem godImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Godfrey, First Elden Lord">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Godfrey, First Elden Lord">
                 </div>
                 <div class="catalogItem godImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Elden Beast">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Elden Beast">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Malenia's Great Rune">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Malenia's Great Rune">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Rykard's Great Rune">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Rykard's Great Rune">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Radahn's Great Rune">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Radahn's Great Rune">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Godrick's Great Rune">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Godrick's Great Rune">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Mohg's Great Rune">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Mohg's Great Rune">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Morgott's Great Rune">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Morgott's Great Rune">
                 </div>
                 <div class="catalogItem greatRuneImage">
-                    <img src="mockupsAndWireframes/placeHolder.png" alt="Great Rune of the Unborn">
+                    <img src="mockupsAndWireframes/placeHolder.png"
+                        alt="Great Rune of the Unborn">
                 </div>
             </div>
             <footer>
@@ -109,7 +132,8 @@
                     </ul>
                 </div>
                 <div id="footerAd">
-                    <a href="https://en.bandainamcoent.eu/elden-ring/elden-ring">
+                    <a
+                        href="https://en.bandainamcoent.eu/elden-ring/elden-ring">
                         <H2>Get The Game</H2>
                     </a>
                 </div>
@@ -122,6 +146,8 @@
 
             <!-- main javascript code for the website -->
             <script src="scripts/script.js"> </script>
+            <!-- catalog filtering and display code -->
+            <script src="scripts/catalog.js"></script>
         </div>
     </body>
 </html>
