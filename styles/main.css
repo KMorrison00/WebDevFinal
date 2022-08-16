@@ -103,7 +103,7 @@ footer li {
 
 header a,
 footer a {
-  transition: all 0.2s ease 0s;
+  transition: all 0.3s ease 0s;
   text-decoration: none;
   color: darkgrey;
 }
@@ -121,6 +121,7 @@ footer a:hover {
 
 /* let the user know the title is also a link back to the main page */
 .title :hover {
+  transition: all 0.3s ease 0s;
   color: rgb(252, 247, 0);
 }
 
@@ -176,14 +177,14 @@ footer a:hover {
   top: 45%;
   left: 2%;
   /* center the arrow symbol in the button */
-  padding-left: 4px;
-  padding-top: 8px;
+  padding-left: 5px;
+  padding-top: 4px;
 }
 
 .btn-fwd {
   /* center the arrow symbol in the button */
-  padding-right: 4px;
-  padding-top: 8px;
+  padding-right: 5px;
+  padding-top: 4px;
   /* position the button in the center of the carousel display*/
   top: 45%;
   right: 2%;
