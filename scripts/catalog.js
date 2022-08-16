@@ -34,6 +34,8 @@ function filterCatalog(elem) {
         // make only filtered items visible in the catalog
         if (!item.hasAttribute("displayed")) {
             item.style.display = 'none'
+        } else {
+            item.style.display = 'block'
         }
     })
 }
@@ -46,9 +48,10 @@ function showHideAll(elem) {
             element.querySelector('input').checked = false;
         })
 
-        // then unhide all the catalog items
+        // then unhide all the catalog items and reset displayed property
         items.forEach(function(item) {
             item.style.display = 'block'
+            item.removeAttribute("displayed");
         })
     }
 }
