@@ -64,52 +64,110 @@ header {
   max-height: 80px;
   background-color: rgb(44, 44, 44);
 }
+/* for tablet view we want to collapse the header bar into a menu */
+@media (max-width: 768px) {
+  header {
+    overflow: hidden;
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* now we can display the dropdown button, copy all the colouring */
+  .dropdown .dropbtn {
+    display: block;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: darkgrey;
+    background-color: inherit;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: larger;
+    margin: 0;
+  }
+  /* hide the header links to display when hovering the dropdown */
+  #headerLinks {
+    display: none;
+    position: absolute;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* re colour the dropdown menu links  */
+  #headerLinks a {
+    float: none;
+    color: darkgrey;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: rgb(44, 44, 44);
+  }
+  /* Show the dropdown menu on hover */
+  .dropdown:hover #headerLinks {
+    display: block;
+  }
+  /* re-highlight the text on hover for the dropdown links */
+  #headerLinks a:hover {
+    color: rgb(252, 247, 0);
+  }
+
+}
 
 /* layout the footer with items centralized but split across three lines */
-footer {
-  grid-area: footer;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px;
+/* this footer is not wider than the carousel and thus will be supported on all devices */
+@media (min-width: 600px) {
+  footer {
+    grid-area: footer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+  }
+  footer li {
+    list-style: none;
+  }
+  
+  #footerAd {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  /* make the ad more obvious with brighter colour */
+  #footerAd a h2{
+    text-align: center;
+    color: rgb(252, 247, 0);
+  }
+  
+  footer .address {
+    text-align: center;
+  }
 }
 
-#footerAd {
-  padding: 30px;
-}
 
-/* make the ad more obvious with brighter colour */
-#footerAd a h2{
-  text-align: center;
-  color: rgb(252, 247, 0);
-}
 
-footer .address {
-  text-align: center;
-}
 
-/* remove bullet points from the header/footer links list */
-header ul,
-footer ul {
-  list-style: none;
+/* hide the menu button unless on tablet */
+.dropbtn {
+  display: none;
 }
 
 /* add colour and animation to the header/footer links */
-header li,
-footer li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
 header a,
 footer a {
+  display: inline-block;
+  padding: 0px 20px;
   transition: all 0.3s ease 0s;
   text-decoration: none;
   color: darkgrey;
 }
 
 /* show highlight on mouse hover for links*/
-header li a:hover,
+header a:hover,
 footer a:hover {
   color: rgb(252, 247, 0);
 }
@@ -214,10 +272,10 @@ footer a:hover {
 /* styling for verticle container on most info pages, will contain left and right leaning articles vertically */
 .offCenterArticleContainer {
   grid-area: offCArticle;
-  column-count: 1;
   padding: 50px;
 }
 
+/* center the image */
 .articleImageTop .imageContainer {
   padding-left: 40px;
   padding-top: 20px;
@@ -225,7 +283,7 @@ footer a:hover {
 
 /* Put all info for article on one line */
 .articleImageLeft, .articleImageRight {
-  margin-top: 10px;
+  margin-top: 30px;
   max-height: 230px;
   padding: 25px;
   display: inline-block;
@@ -266,8 +324,31 @@ footer a:hover {
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.6);
 }
 
+/* layout for the image catalog */
 .catalogDisplay {
+  line-height: 0;
   grid-area: catalog;
+  column-count: 4;
+  column-gap: 5px;
+  padding: 50px;
+}
+/* for tablet viewer we will reduce the number of columns */
+@media (max-width: 768px) {
+  .catalogDisplay {
+    column-count: 2;
+  }
+}
+
+/* make sure the width is mainted for the image gallery but not nessecarily height for style */
+.catalogItem img {
+  width: 100%;
+  height: auto;
+  margin-bottom:5px; /* to match column gap */
+  filter: grayscale(50%); /* adding some flavour to high user view*/
+}
+
+.catalogItem img:hover {
+  filter: brightness(110%);
 }
 
 /* display all the filters in one line */

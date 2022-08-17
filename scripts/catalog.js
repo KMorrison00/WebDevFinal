@@ -11,17 +11,17 @@ filters.forEach(function(element) {
     element.addEventListener('change', function(event){filterCatalog(event.target)})
 });
 
-function filterCatalog(elem) {
+function filterCatalog(element) {
     // get the root prefix to know what we're filtering
-    let prefix = elem.id.split('Filter')[0];
+    let prefix = element.id.split('Filter')[0];
     // if any filter is checked we need to uncheck the "Show All" checkbox
     // since we're no longer showing all items
-    if (elem.checked) {
+    if (element.checked) {
         showAll.checked = false
     }
 
     items.forEach(function(item) {
-        if(item.classList.contains(`${prefix}Image`) && elem.checked) {
+        if(item.classList.contains(`${prefix}Image`) && element.checked) {
             // filter has been selected so mark it to be displayed
             item.setAttribute("displayed", "true");
         } else if (item.classList.contains(`${prefix}Image`)) {
@@ -29,28 +29,28 @@ function filterCatalog(elem) {
             // mark for being displayed
             item.removeAttribute("displayed");
         }
+        
         // now that we've determined which elements should be displayed
         // hide the rest
         // make only filtered items visible in the catalog
         if (!item.hasAttribute("displayed")) {
             item.style.display = 'none'
         } else {
-            item.style.display = 'block'
+            item.style.display = 'block' 
         }
     })
 }
 
-function showHideAll(elem) {
+function showHideAll(element) {
     // we want to display everything if the box was checked, otherwise do nothing
-    if (elem.checked) {
+    if (element.checked) {
         // first we uncheck all the filters
-        filters.forEach(function(element) {
-            element.querySelector('input').checked = false;
+        filters.forEach(function(filter) {
+            filter.querySelector('input').checked = false;
         })
-
         // then unhide all the catalog items and reset displayed property
         items.forEach(function(item) {
-            item.style.display = 'block'
+            item.style.display = 'block' 
             item.removeAttribute("displayed");
         })
     }
