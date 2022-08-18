@@ -219,7 +219,7 @@ footer a:hover {
   padding-bottom: 5px;
   border: none;
   border-radius: 50%;
-  z-index: 10px;
+  z-index: 10;
   cursor: pointer;
   background-color: #fff;
   font-size: 18px;
@@ -355,9 +355,6 @@ footer a:hover {
   width: 250px;
   height: 250px;
   border-radius: 100px;
-  /* background-color: rgb(26, 26, 26);
-   */
-  /* border-style: solid; */
 }
 
 /* make sure the width is mainted for the image gallery but not nessecarily height for style */
