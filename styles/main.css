@@ -261,8 +261,8 @@ footer a:hover {
 /* keep all the articles on one line and constrain them */
 .articleImageTop {
   display: inline-block;
-  max-width: 300px;
-  padding: 10px 20px;
+  width: 300px;
+  padding: 20px;
 }
 /* change curser to let user know its clickable unlike other articles */
 .articleImageTop img:hover{
@@ -275,10 +275,18 @@ footer a:hover {
   padding: 50px;
 }
 
+.imageContainer {
+  background-color: black;
+}
+
+.articleImageTop img {
+  width: 300px;
+  height: 270px;
+}
+
 /* center the image */
 .articleImageTop .imageContainer {
-  padding-left: 40px;
-  padding-top: 20px;
+   padding: 0;
 }
 
 /* Put all info for article on one line */
@@ -309,6 +317,10 @@ footer a:hover {
   padding-Right: 250px;
 }
 
+.articleImageLeft img, .articleImageRight img {
+  width: 200px;
+  height: 200px;
+}
 
 /* non-page specific effects for articles */
 .article {
@@ -339,10 +351,18 @@ footer a:hover {
   }
 }
 
+.catalogItem {
+  width: 250px;
+  height: 250px;
+  border-radius: 100px;
+  background-color: rgb(26, 26, 26);
+}
+
 /* make sure the width is mainted for the image gallery but not nessecarily height for style */
 .catalogItem img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 50px;
   margin-bottom:5px; /* to match column gap */
   filter: grayscale(50%); /* adding some flavour to high user view*/
 }

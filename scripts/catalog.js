@@ -19,6 +19,7 @@ function filterCatalog(element) {
     if (element.checked) {
         showAll.checked = false
     }
+    shuffleElements()
 
     items.forEach(function(item) {
         if(item.classList.contains(`${prefix}Image`) && element.checked) {
@@ -44,6 +45,9 @@ function filterCatalog(element) {
 function showHideAll(element) {
     // we want to display everything if the box was checked, otherwise do nothing
     if (element.checked) {
+        // show the elements in a random order
+        shuffleElements()
+
         // first we uncheck all the filters
         filters.forEach(function(filter) {
             filter.querySelector('input').checked = false;
@@ -57,3 +61,15 @@ function showHideAll(element) {
 }
 // tie the change event to the show all checkbox
 showAll.addEventListener('change', function(event){showHideAll(event.target)})
+
+// make the display less uniform by shuffling the elements
+function shuffleElements() {
+    var catalog = document.querySelector('.catalogDisplay');
+    var items = Array.from(document.querySelectorAll('.catalogItem'));
+    // randomly sort the array by passing an unrelated sorting function that randomly detemrines high/low
+    items.sort((a, b) => 0.5 - Math.random());
+    // all the items are children of the catalog so we can jsut reappend them in the new order
+    items.forEach((item) => {
+        catalog.appendChild(item);
+    })
+}
