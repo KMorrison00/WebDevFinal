@@ -355,7 +355,9 @@ footer a:hover {
   width: 250px;
   height: 250px;
   border-radius: 100px;
-  background-color: rgb(26, 26, 26);
+  /* background-color: rgb(26, 26, 26);
+   */
+  /* border-style: solid; */
 }
 
 /* make sure the width is mainted for the image gallery but not nessecarily height for style */
@@ -364,11 +366,11 @@ footer a:hover {
   height: 100%;
   border-radius: 50px;
   margin-bottom:5px; /* to match column gap */
-  filter: grayscale(50%); /* adding some flavour to high user view*/
+  filter: grayscale(80%); /* adding some flavour to high user view*/
 }
 
 .catalogItem img:hover {
-  filter: brightness(110%);
+  filter: brightness(120%);
 }
 
 /* display all the filters in one line */
