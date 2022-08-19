@@ -20,3 +20,5 @@ articleCards.forEach(function(element) {
     element.addEventListener('click', handleArticleClick);
 });
 
+const footerAd = document.querySelector('#footerAd')
+footerAd.addEventListener('click', handleArticleClick)

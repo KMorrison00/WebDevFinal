@@ -120,35 +120,29 @@ header {
 
 /* layout the footer with items centralized but split across three lines */
 /* this footer is not wider than the carousel and thus will be supported on all devices */
-@media (min-width: 600px) {
-  footer {
-    grid-area: footer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 50px;
-  }
-  footer li {
-    list-style: none;
-  }
-  
-  #footerAd {
-    text-align: center;
-    padding: 30px;
-  }
-  
-  /* make the ad more obvious with brighter colour */
-  #footerAd a h2{
-    text-align: center;
-    color: rgb(252, 247, 0);
-  }
-  
-  footer .address {
-    text-align: center;
-  }
+footer {
+  grid-area: footer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
 }
 
+#footerAd {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+}
 
+/* make the ad more obvious with brighter colour */
+#footerAd h2{
+  text-align: center;
+  color: rgb(252, 247, 0);
+}
+
+footer .address {
+  text-align: center;
+}
 
 
 /* hide the menu button unless on tablet */
