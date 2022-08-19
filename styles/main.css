@@ -11,7 +11,7 @@ body {
   height: 200vh;
   display: grid;
   font-family: 'EB Garamond', serif;
-  background-image: url('../images/BG.jpg');
+  background-image: url('../images/background.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
@@ -266,7 +266,6 @@ footer a:hover {
     grid-area: vArticle;
     display: block;
     column-count: 1;
-    column-width: 300;
     margin-left: auto;
     margin-right: 200px;
     
